@@ -1,24 +1,3 @@
-
-
-import type { Metadata } from 'next'
-
-
-export const metadata: Metadata = {
-  title: 'LoMurro Law - Trial Attorneys in Morgantown, WV | Supreme Court Certified',
-  description: 'Trial Attorneys in Morgantown, West Virginia. All attorneys with all five West Virginia Supreme Court certifications. Proven case results. Call (724) 841-0346.',
-  openGraph: {
-    title: 'LoMurro Law - Trial Attorneys in Morgantown, WV | Supreme Court Certified',
-    description: 'Trial Attorneys in Morgantown, West Virginia. All attorneys with all five West Virginia Supreme Court certifications. Proven case results.',
-    url: 'https://www.lomurrolaw.com/',
-    siteName: 'LoMurro Law',
-    locale: 'en_US',
-    type: 'website',
-  },
-  alternates: {
-    canonical: 'https://www.lomurrolaw.com/',
-  },
-}
-
 export default function HomePage() {
   return (
     <div style={{ fontFamily: "'Open Sans', sans-serif", margin: 0, padding: 0 }}>
