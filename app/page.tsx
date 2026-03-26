@@ -1,646 +1,357 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Lomurro Law - Civil Trial Attorneys with Supreme Court Certifications',
-  description: 'Lomurro Law has all five Supreme Court certifications. Experienced civil trial attorneys in Pennsylvania. Call (724) 410-8346 for a free consultation.',
+  title: 'LoMurro Law - Trial Attorneys in Morgantown, WV | Supreme Court Certified',
+  description: 'Trial Attorneys in Morgantown, West Virginia. All attorneys with all five West Virginia Supreme Court certifications. Proven case results. Call (724) 841-0346.',
   openGraph: {
-    title: 'Lomurro Law - Civil Trial Attorneys with Supreme Court Certifications',
-    description: 'Lomurro Law has all five Supreme Court certifications. Experienced civil trial attorneys in Pennsylvania.',
+    title: 'LoMurro Law - Trial Attorneys in Morgantown, WV | Supreme Court Certified',
+    description: 'Trial Attorneys in Morgantown, West Virginia. All attorneys with all five West Virginia Supreme Court certifications. Proven case results.',
     url: 'https://www.lomurrolaw.com/',
-    siteName: 'Lomurro Law',
+    siteName: 'LoMurro Law',
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
     canonical: 'https://www.lomurrolaw.com/',
   },
-};
+}
 
 export default function HomePage() {
   return (
-    <div style={{ fontFamily: "'Raleway', sans-serif", color: '#2C2C2C' }}>
-      <header style={{ 
-        position: 'absolute', 
-        top: 0, 
-        left: 0, 
-        right: 0, 
-        zIndex: 100,
-        padding: '20px 40px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%)'
-      }}>
-        <div>
-          <img src="/logo.png" alt="Lomurro Law" style={{ height: '60px' }} />
+    <div style={{ fontFamily: "'Open Sans', sans-serif", margin: 0, padding: 0 }}>
+      <header style={{ position: 'fixed', top: 0, left: 0, right: 0, backgroundColor: 'rgba(255, 255, 255, 0.95)', zIndex: 1000, borderBottom: '1px solid #e5e5e5' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '15px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '50px', height: '50px', position: 'relative' }}>
+              <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
+                <text x="50" y="55" fontSize="40" fontWeight="bold" textAnchor="middle" fill="#8B0F28" fontFamily="'Oswald', sans-serif">L</text>
+              </svg>
+            </div>
+            <div>
+              <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: '24px', fontWeight: 700, color: '#2C2C2C', letterSpacing: '1px' }}>LOMURRO LAW</div>
+            </div>
+          </div>
+          <div style={{ fontSize: '12px', color: '#2C2C2C', textAlign: 'right' }}>
+            <div>Se habla español | Se parla Italiano</div>
+            <div style={{ fontWeight: 'bold', fontSize: '14px', marginTop: '3px' }}>(724) 841-0346</div>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
-          <a href="tel:7244108346" style={{ color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>
-            TO SCHEDULE AN APPOINTMENT CALL (724) 410-8346
-          </a>
-        </div>
-        <nav style={{ display: 'flex', gap: '25px' }}>
-          <a href="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '13px', fontWeight: 500 }}>HOME</a>
-          <a href="/about" style={{ color: '#fff', textDecoration: 'none', fontSize: '13px', fontWeight: 500 }}>ABOUT US</a>
-          <a href="/practice-areas" style={{ color: '#fff', textDecoration: 'none', fontSize: '13px', fontWeight: 500 }}>PRACTICE AREAS</a>
-          <a href="/contact" style={{ color: '#fff', textDecoration: 'none', fontSize: '13px', fontWeight: 500 }}>CONTACT</a>
+        <nav style={{ backgroundColor: '#f8f8f8', borderTop: '1px solid #e5e5e5' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', gap: '30px' }}>
+              <li style={{ padding: '12px 0' }}><a href="/" style={{ color: '#2C2C2C', textDecoration: 'none', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>HOME</a></li>
+              <li style={{ padding: '12px 0' }}><a href="/attorneys" style={{ color: '#2C2C2C', textDecoration: 'none', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>ATTORNEYS</a></li>
+              <li style={{ padding: '12px 0' }}><a href="/practice-areas" style={{ color: '#2C2C2C', textDecoration: 'none', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>PRACTICE AREAS</a></li>
+              <li style={{ padding: '12px 0' }}><a href="/contact" style={{ color: '#2C2C2C', textDecoration: 'none', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>CONTACT</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 
-      <section style={{
-        position: 'relative',
-        height: '600px',
-        background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/hero-bg.jpg") center/cover',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        color: '#fff'
-      }}>
-        <h1 style={{
-          fontFamily: "'Crimson Text', serif",
-          fontSize: '56px',
-          fontWeight: 700,
-          marginBottom: '20px',
-          lineHeight: 1.2,
-          maxWidth: '900px'
-        }}>
-          WE HAVE ALL FIVE SUPREME<br />COURT CERTIFICATIONS
-        </h1>
-        <p style={{
-          fontSize: '16px',
-          marginBottom: '30px',
-          lineHeight: 1.6,
-          maxWidth: '700px',
-          fontWeight: 300
-        }}>
-          FULL BOARD CERTIFIED AS A CIVIL TRIAL ATTORNEY • AS A PRETRIAL PRACTICE ADVOCATE<br />
-          AS A CIVIL TRIAL ADVOCATE • AS A CIVIL PRETRIAL PRACTICE ADVOCATE<br />
-          AS A TRIAL ADVOCATE
-        </p>
-        <div style={{ display: 'flex', gap: '20px', marginBottom: '40px' }}>
-          <a href="/contact" style={{
-            background: '#8B1538',
-            color: '#fff',
-            padding: '15px 35px',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: 700,
-            letterSpacing: '1px',
-            border: 'none',
-            cursor: 'pointer'
-          }}>
-            SCHEDULE A FREE CONSULTATION
-          </a>
-        </div>
-        <div style={{
-          display: 'flex',
-          gap: '50px',
-          marginTop: '20px'
-        }}>
-          <div>
-            <div style={{ fontSize: '36px', fontWeight: 700, marginBottom: '5px' }}>98%</div>
-            <div style={{ fontSize: '12px', fontWeight: 300 }}>SUCCESS RATE</div>
-          </div>
-          <div>
-            <div style={{ fontSize: '36px', fontWeight: 700, marginBottom: '5px' }}>35+</div>
-            <div style={{ fontSize: '12px', fontWeight: 300 }}>YEARS EXPERIENCE</div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: '80px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '20px', marginBottom: '50px' }}>
-            <h2 style={{
-              fontFamily: "'Crimson Text', serif",
-              fontSize: '42px',
-              fontWeight: 700,
-              color: '#2C2C2C',
-              marginBottom: '10px'
-            }}>
-              Case Results
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px', marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '20px' }}>
-              <div style={{ fontSize: '14px', color: '#666', marginBottom: '10px' }}>CATASTROPHIC VEHICLE ACCIDENT SETTLEMENT</div>
-              <div style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '36px',
-                fontWeight: 700,
-                color: '#8B1538',
-                marginBottom: '15px'
-              }}>
-                $2,500,000
-              </div>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#555' }}>
-                Our client was driving in the middle of the night, in the middle lane, of a busy highway. A drunk driver suddenly swerved into our client's lane and crashed into our client's vehicle. The violent crash killed the drunk driver and caused our client to be paralyzed from the chest down.
-              </p>
-            </div>
-
-            <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '20px' }}>
-              <div style={{ fontSize: '14px', color: '#666', marginBottom: '10px' }}>WRONGFUL DEATH SETTLEMENT</div>
-              <div style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '36px',
-                fontWeight: 700,
-                color: '#8B1538',
-                marginBottom: '15px'
-              }}>
-                $2,300,000
-              </div>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#555' }}>
-                Our client was a family man, a hard worker, who fell approximately 45 feet from a crane in a serious industrial workplace accident. Our client was allegedly not secured to an appropriate safety device and suffered massive injuries that led to his death.
-              </p>
-            </div>
-
-            <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '20px' }}>
-              <div style={{ fontSize: '14px', color: '#666', marginBottom: '10px' }}>HEAD TRAUMA VERDICT</div>
-              <div style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '36px',
-                fontWeight: 700,
-                color: '#8B1538',
-                marginBottom: '15px'
-              }}>
-                $1,550,000
-              </div>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#555' }}>
-                Following a routine medical procedure, our client suffered permanent memory loss, cognitive decline and an inability to continue her professional career. The case proceeded to trial after the defendant hospital and surgeon denied any fault.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <a href="/case-results" style={{
-              display: 'inline-block',
-              background: '#8B1538',
-              color: '#fff',
-              padding: '15px 35px',
-              textDecoration: 'none',
-              fontSize: '13px',
-              fontWeight: 700,
-              letterSpacing: '1px'
-            }}>
-              SEE MORE RESULTS
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section style={{
-        background: '#8B1538',
-        padding: '80px 40px',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
-        <div style={{
-          position: 'absolute',
-          right: 0,
-          top: 0,
-          bottom: 0,
-          width: '50%',
-          background: '#fff',
-          clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)'
-        }}></div>
-        <div style={{
-          maxWidth: '1200px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '60px',
-          position: 'relative',
-          zIndex: 1
-        }}>
-          <div style={{ color: '#fff' }}>
-            <div style={{ borderLeft: '3px solid #fff', paddingLeft: '20px', marginBottom: '30px' }}>
-              <h2 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '42px',
-                fontWeight: 700,
-                marginBottom: '10px'
-              }}>
-                Legal Experience To Work For You
-              </h2>
-            </div>
-          </div>
-          <div style={{ color: '#2C2C2C' }}>
-            <p style={{ fontSize: '15px', lineHeight: 1.8, marginBottom: '20px' }}>
-              At Lomurro Law, we pride ourselves in representing the needs of our clients above all else. Our firm is built on a foundation of trust, integrity, and unwavering commitment to achieving justice for those we serve.
+      <main style={{ marginTop: '120px' }}>
+        <section style={{ position: 'relative', height: '600px', overflow: 'hidden', backgroundImage: 'url(/hero-books.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.5)' }}></div>
+          <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', color: '#fff', maxWidth: '900px', padding: '0 20px' }}>
+            <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '52px', fontWeight: 700, margin: '0 0 20px 0', letterSpacing: '2px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+              TRIAL ATTORNEYS WITH ALL FIVE WEST VIRGINIA SUPREME COURT CERTIFICATIONS
+            </h1>
+            <p style={{ fontSize: '18px', lineHeight: '1.6', margin: '0 0 30px 0', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' }}>
+              Full board certification in all five areas as recognized by the West Virginia Supreme Court of Appeals. Our attorneys are certified in Personal Injury Trial Advocacy, Civil Trial Advocacy, Civil Pretrial Practice Advocacy, Medical Malpractice, and Workers' Compensation.
             </p>
-            <p style={{ fontSize: '15px', lineHeight: 1.8, marginBottom: '20px' }}>
-              With over 30 years of experience in personal injury law, we understand that every case is unique and requires personalized attention. Our team of dedicated attorneys works tirelessly to ensure that our clients receive the compensation they deserve.
-            </p>
-            <p style={{ fontSize: '15px', lineHeight: 1.8 }}>
-              We take pride in our track record of success, having recovered millions of dollars for our clients over the years. Whether you've been injured in a car accident, suffered from medical malpractice, or experienced a workplace injury, we have the expertise and resources to fight for your rights.
-            </p>
+            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '30px' }}>
+              <a href="/free-consultation" style={{ backgroundColor: '#8B0F28', color: '#fff', padding: '15px 35px', textDecoration: 'none', fontFamily: "'Oswald', sans-serif", fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', transition: 'background-color 0.3s' }}>
+                FREE CONSULTATION
+              </a>
+              <a href="/about" style={{ backgroundColor: 'transparent', color: '#fff', padding: '15px 35px', textDecoration: 'none', fontFamily: "'Oswald', sans-serif", fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', border: '2px solid #fff', cursor: 'pointer', transition: 'background-color 0.3s' }}>
+                LEARN MORE
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={{ background: '#2C2C2C', padding: '80px 40px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', marginBottom: '40px' }}>
+        <section style={{ backgroundColor: '#f8f8f8', padding: '60px 20px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ marginBottom: '40px' }}>
+              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '36px', fontWeight: 700, color: '#2C2C2C', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>Case Results</h2>
+              <div style={{ width: '60px', height: '3px', backgroundColor: '#8B0F28', marginBottom: '30px' }}></div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+              <div style={{ backgroundColor: '#fff', padding: '30px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '12px', color: '#666', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  CATASTROPHIC PERSONAL INJURY SETTLEMENT IN WEST VIRGINIA
+                </div>
+                <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: '32px', fontWeight: 700, color: '#8B0F28', marginBottom: '15px' }}>
+                  $2,500,000
+                </div>
+                <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#444', margin: 0 }}>
+                  Our client sustained a catastrophic brain injury when he was struck by a vehicle while crossing the street. Through aggressive litigation and expert testimony, we secured a $2.5 million settlement that provides for our client's lifetime care needs.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: '#fff', padding: '30px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '12px', color: '#666', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  WRONGFUL DEATH SETTLEMENT
+                </div>
+                <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: '32px', fontWeight: 700, color: '#8B0F28', marginBottom: '15px' }}>
+                  $2,300,000
+                </div>
+                <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#444', margin: 0 }}>
+                  Our client's family member died as a result of nursing home neglect and abuse. We fought tirelessly to hold the facility accountable and obtained a $2.3 million settlement for the family.
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: '#fff', padding: '30px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+                <div style={{ fontSize: '12px', color: '#666', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  MEDICAL MALPRACTICE VERDICT
+                </div>
+                <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: '32px', fontWeight: 700, color: '#8B0F28', marginBottom: '15px' }}>
+                  $1,550,000
+                </div>
+                <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#444', margin: 0 }}>
+                  A jury awarded our client $1.55 million after a surgeon's negligence resulted in permanent nerve damage. This verdict compensated our client for medical expenses, lost wages, and pain and suffering.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <a href="/case-results" style={{ backgroundColor: '#8B0F28', color: '#fff', padding: '12px 30px', textDecoration: 'none', fontFamily: "'Oswald', sans-serif", fontSize: '14px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', display: 'inline-block' }}>
+                SEE MORE RESULTS
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ backgroundColor: '#fff', padding: '80px 20px', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: 0, left: 0, width: '50%', height: '100%', backgroundColor: '#8B0F28', clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)' }}></div>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
             <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
+              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '42px', fontWeight: 700, marginBottom: '20px', letterSpacing: '1px', lineHeight: '1.2', textTransform: 'uppercase' }}>
+                Get The Best Legal Experience To Work For You
+              </h2>
+              <div style={{ width: '60px', height: '3px', backgroundColor: '#fff', marginBottom: '20px' }}></div>
+            </div>
+            <div style={{ color: '#2C2C2C' }}>
+              <p style={{ fontSize: '15px', lineHeight: '1.8', marginBottom: '20px' }}>
+                The LoMurro Law team is dedicated to providing exceptional legal representation for clients throughout West Virginia. Our attorneys have achieved the highest level of professional recognition by earning all five West Virginia Supreme Court certifications.
+              </p>
+              <p style={{ fontSize: '15px', lineHeight: '1.8', margin: 0 }}>
+                With a track record of multimillion-dollar verdicts and settlements, we have the experience and expertise to handle even the most complex cases. From personal injury to medical malpractice, wrongful death to workers' compensation, we fight tirelessly for the rights of our clients.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ backgroundColor: '#2C2C2C', padding: '60px 20px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px' }}>
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                   PERSONAL INJURY
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Car Accidents</li>
+                  <li style={{ marginBottom: '8px' }}>• Truck Accidents</li>
+                  <li style={{ marginBottom: '8px' }}>• Motorcycle Accidents</li>
+                  <li style={{ marginBottom: '8px' }}>• Slip and Fall</li>
+                  <li style={{ marginBottom: '8px' }}>• Dog Bites</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Car Accidents</li>
-                <li>• Truck Accidents</li>
-                <li>• Motorcycle Accidents</li>
-                <li>• Slip and Fall</li>
-                <li>• Premises Liability</li>
-              </ul>
-            </div>
 
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                   MEDICAL MALPRACTICE
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Surgical Errors</li>
+                  <li style={{ marginBottom: '8px' }}>• Birth Injuries</li>
+                  <li style={{ marginBottom: '8px' }}>• Misdiagnosis</li>
+                  <li style={{ marginBottom: '8px' }}>• Medication Errors</li>
+                  <li style={{ marginBottom: '8px' }}>• Hospital Negligence</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Surgical Errors</li>
-                <li>• Birth Injuries</li>
-                <li>• Misdiagnosis</li>
-                <li>• Medication Errors</li>
-                <li>• Hospital Negligence</li>
-              </ul>
-            </div>
 
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
-                  WORKERS COMPENSATION
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  WORKERS' COMPENSATION
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Workplace Injuries</li>
+                  <li style={{ marginBottom: '8px' }}>• Occupational Diseases</li>
+                  <li style={{ marginBottom: '8px' }}>• Denied Claims</li>
+                  <li style={{ marginBottom: '8px' }}>• Permanent Disability</li>
+                  <li style={{ marginBottom: '8px' }}>• Appeals</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Workplace Injuries</li>
-                <li>• Construction Accidents</li>
-                <li>• Repetitive Stress</li>
-                <li>• Occupational Disease</li>
-                <li>• Denied Claims</li>
-              </ul>
-            </div>
 
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
-                  CRIMINAL LAW
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  WRONGFUL DEATH
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Fatal Accidents</li>
+                  <li style={{ marginBottom: '8px' }}>• Medical Negligence</li>
+                  <li style={{ marginBottom: '8px' }}>• Nursing Home Abuse</li>
+                  <li style={{ marginBottom: '8px' }}>• Defective Products</li>
+                  <li style={{ marginBottom: '8px' }}>• Workplace Deaths</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• DUI Defense</li>
-                <li>• Drug Charges</li>
-                <li>• Assault & Battery</li>
-                <li>• Theft Crimes</li>
-                <li>• White Collar Crimes</li>
-              </ul>
             </div>
-          </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px' }}>
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px', marginTop: '40px' }}>
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                   NURSING HOME ABUSE
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Physical Abuse</li>
+                  <li style={{ marginBottom: '8px' }}>• Neglect</li>
+                  <li style={{ marginBottom: '8px' }}>• Bedsores</li>
+                  <li style={{ marginBottom: '8px' }}>• Malnutrition</li>
+                  <li style={{ marginBottom: '8px' }}>• Medication Errors</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Physical Abuse</li>
-                <li>• Neglect</li>
-                <li>• Medication Errors</li>
-                <li>• Bedsores</li>
-                <li>• Wrongful Death</li>
-              </ul>
-            </div>
 
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
-                  FAMILY LAW
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  PRODUCT LIABILITY
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Defective Products</li>
+                  <li style={{ marginBottom: '8px' }}>• Dangerous Drugs</li>
+                  <li style={{ marginBottom: '8px' }}>• Medical Devices</li>
+                  <li style={{ marginBottom: '8px' }}>• Auto Defects</li>
+                  <li style={{ marginBottom: '8px' }}>• Consumer Products</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Divorce</li>
-                <li>• Child Custody</li>
-                <li>• Child Support</li>
-                <li>• Spousal Support</li>
-                <li>• Property Division</li>
-              </ul>
-            </div>
 
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
-                  WILLS & ESTATES
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  MASS & TOXIC TORTS
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Chemical Exposure</li>
+                  <li style={{ marginBottom: '8px' }}>• Environmental Hazards</li>
+                  <li style={{ marginBottom: '8px' }}>• Asbestos</li>
+                  <li style={{ marginBottom: '8px' }}>• Class Actions</li>
+                  <li style={{ marginBottom: '8px' }}>• Mass Litigation</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Estate Planning</li>
-                <li>• Wills & Trusts</li>
-                <li>• Power of Attorney</li>
-                <li>• Probate</li>
-                <li>• Estate Administration</li>
-              </ul>
-            </div>
 
-            <div style={{ color: '#fff' }}>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '15px', marginBottom: '15px' }}>
-                <h3 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  marginBottom: '10px'
-                }}>
-                  BANKRUPTCY LAW
+              <div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '18px', fontWeight: 700, color: '#fff', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  CATASTROPHIC INJURY
                 </h3>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, fontSize: '14px', lineHeight: '1.8', color: '#ccc' }}>
+                  <li style={{ marginBottom: '8px' }}>• Traumatic Brain Injury</li>
+                  <li style={{ marginBottom: '8px' }}>• Spinal Cord Injury</li>
+                  <li style={{ marginBottom: '8px' }}>• Amputations</li>
+                  <li style={{ marginBottom: '8px' }}>• Severe Burns</li>
+                  <li style={{ marginBottom: '8px' }}>• Paralysis</li>
+                </ul>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', lineHeight: 2 }}>
-                <li>• Chapter 7 Bankruptcy</li>
-                <li>• Chapter 13 Bankruptcy</li>
-                <li>• Debt Relief</li>
-                <li>• Foreclosure Defense</li>
-                <li>• Creditor Harassment</li>
-              </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={{ padding: '80px 40px', background: '#f5f5f5' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
-            <div>
-              <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '20px', marginBottom: '30px' }}>
-                <div style={{ fontSize: '14px', color: '#8B1538', marginBottom: '10px', fontWeight: 600 }}>
-                  LOMURRO LAW FEATURED PUBLICATION
+        <section style={{ backgroundColor: '#f8f8f8', padding: '80px 20px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'flex-start' }}>
+              <div>
+                <div style={{ marginBottom: '30px' }}>
+                  <div style={{ fontSize: '12px', color: '#8B0F28', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>
+                    COMMONLY ASKED QUESTIONS
+                  </div>
+                  <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '36px', fontWeight: 700, color: '#2C2C2C', marginBottom: '15px', letterSpacing: '1px', lineHeight: '1.2' }}>
+                    What Sets LoMurro Law Apart
+                  </h2>
+                  <div style={{ width: '60px', height: '3px', backgroundColor: '#8B0F28', marginBottom: '20px' }}></div>
                 </div>
-                <h2 style={{
-                  fontFamily: "'Crimson Text', serif",
-                  fontSize: '42px',
-                  fontWeight: 700,
-                  color: '#2C2C2C',
-                  marginBottom: '10px'
-                }}>
-                  What Sets Lomurro Law Apart
-                </h2>
+
+                <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#444', marginBottom: '20px' }}>
+                  At LoMurro Law, we pride ourselves on our unique qualifications and commitment to excellence. Our attorneys are the only team in West Virginia where every lawyer holds all five Supreme Court certifications—a distinction that sets us apart from other firms.
+                </p>
+
+                <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#444', marginBottom: '20px' }}>
+                  We don't just handle cases—we fight for justice. Our track record speaks for itself, with numerous multimillion-dollar verdicts and settlements that have changed our clients' lives. We combine aggressive litigation tactics with compassionate client care.
+                </p>
+
+                <p style={{ fontSize: '15px', lineHeight: '1.8', color: '#444', margin: 0 }}>
+                  When you choose LoMurro Law, you're choosing a team that will stand by your side through every step of the legal process. We offer free consultations and work on a contingency fee basis, which means you pay nothing unless we win your case.
+                </p>
               </div>
-              <p style={{ fontSize: '15px', lineHeight: 1.8, marginBottom: '20px', color: '#555' }}>
-                When you hire Lomurro Law to handle your case, you are hiring a team of Pennsylvania Supreme Court Board Certified Civil Trial Attorneys with extensive courtroom experience. We are one of the few law firms in Pennsylvania to hold all five Supreme Court certifications.
-              </p>
-              <p style={{ fontSize: '15px', lineHeight: 1.8, marginBottom: '20px', color: '#555' }}>
-                Our attorneys have tried hundreds of cases to verdict and have recovered millions of dollars in compensation for our clients. We understand that every case is unique and requires personalized attention and a strategic approach.
-              </p>
-              <p style={{ fontSize: '15px', lineHeight: 1.8, marginBottom: '20px', color: '#555' }}>
-                At Lomurro Law, we believe that justice should be accessible to everyone. That's why we work on a contingency fee basis, which means you don't pay us unless we win your case. We are committed to fighting for your rights and ensuring that you receive the compensation you deserve.
-              </p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <img src="/book-cover.jpg" alt="Medical Malpractice Law" style={{ maxWidth: '350px', boxShadow: '0 10px 40px rgba(0,0,0,0.15)' }} />
-              <p style={{ fontSize: '13px', marginTop: '20px', color: '#666', lineHeight: 1.6 }}>
-                Attorney Lomurro has been published in various legal publications and is recognized as a leading authority on personal injury and medical malpractice law in Pennsylvania. His book on medical malpractice has been used as a reference guide by attorneys across the state.
-              </p>
+
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ backgroundColor: '#fff', padding: '30px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', marginBottom: '20px' }}>
+                  <div style={{ width: '200px', height: '280px', backgroundColor: '#8B0F28', margin: '0 auto 20px auto', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: "'Oswald', sans-serif", fontSize: '18px', position: 'relative' }}>
+                    <div style={{ position: 'absolute', top: '20px', left: '20px', right: '20px', bottom: '20px', border: '2px solid rgba(255,255,255,0.5)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+                      <div style={{ fontSize: '32px', fontWeight: 700, marginBottom: '10px' }}>West Virginia</div>
+                      <div style={{ fontSize: '16px', marginBottom: '15px' }}>Medical Malpractice Law</div>
+                      <div style={{ fontSize: '14px', fontStyle: 'italic', marginBottom: '5px' }}>Featuring</div>
+                      <div style={{ fontSize: '18px', fontWeight: 600 }}>Arthur S. LoMurro</div>
+                    </div>
+                  </div>
+                  <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '22px', fontWeight: 700, color: '#2C2C2C', marginBottom: '10px', textTransform: 'uppercase' }}>
+                    Best Lawyers In Morgantown Law
+                  </h3>
+                </div>
+
+                <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#444', marginBottom: '20px' }}>
+                  LoMurro Law attorney Arthur S. LoMurro has been featured as a leading authority in West Virginia medical malpractice law. His expertise and dedication to the field have earned him recognition among the state's top legal professionals.
+                </p>
+
+                <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#444', margin: 0 }}>
+                  This recognition is just one example of the numerous accolades our firm has received for outstanding legal representation and client advocacy.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={{ background: '#8B1538', padding: '60px 40px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{
-            fontFamily: "'Crimson Text', serif",
-            fontSize: '42px',
-            fontWeight: 700,
-            color: '#fff',
-            marginBottom: '30px'
-          }}>
-            For More Information
-          </h2>
-          <p style={{ fontSize: '16px', color: '#fff', marginBottom: '30px' }}>
-            Contact us online or call <a href="tel:7244108346" style={{ color: '#fff', fontWeight: 700 }}>(724) 410-8346</a> to schedule a <strong>FREE</strong> consultation today.
-          </p>
-        </div>
-      </section>
-
-      <section style={{ padding: '80px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ borderLeft: '3px solid #8B1538', paddingLeft: '20px', marginBottom: '50px' }}>
-            <h2 style={{
-              fontFamily: "'Crimson Text', serif",
-              fontSize: '42px',
-              fontWeight: 700,
-              color: '#2C2C2C',
-              marginBottom: '10px'
-            }}>
-              Meet Our Team
+        <section style={{ backgroundColor: '#8B0F28', padding: '60px 20px', textAlign: 'center' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '36px', fontWeight: 700, color: '#fff', marginBottom: '20px', letterSpacing: '1px', textTransform: 'uppercase' }}>
+              For More Information
             </h2>
+            <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#fff', marginBottom: '30px' }}>
+              If you or a loved one has been injured, contact LoMurro Law for a free consultation. Call us at (724) 841-0346 or click below.
+            </p>
+            <a href="/contact" style={{ backgroundColor: '#fff', color: '#8B0F28', padding: '15px 40px', textDecoration: 'none', fontFamily: "'Oswald', sans-serif", fontSize: '16px', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase', display: 'inline-block' }}>
+              SCHEDULE A CONSULTATION
+            </a>
           </div>
+        </section>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '30px' }}>
-            <div style={{ textAlign: 'center' }}>
-              <img src="/attorney-arthur.jpg" alt="Arthur Lomurro" style={{ width: '100%', marginBottom: '15px' }} />
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '5px'
-              }}>
-                Arthur Lomurro
-              </h3>
-              <p style={{ fontSize: '14px', color: '#8B1538', fontWeight: 600 }}>FOUNDER</p>
+        <section style={{ backgroundColor: '#fff', padding: '80px 20px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div style={{ marginBottom: '50px', textAlign: 'center' }}>
+              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '42px', fontWeight: 700, color: '#2C2C2C', marginBottom: '15px', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                Meet Our Team
+              </h2>
+              <div style={{ width: '60px', height: '3px', backgroundColor: '#8B0F28', margin: '0 auto 20px auto' }}></div>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <img src="/attorney-cozen.jpg" alt="Cozen S. Breen" style={{ width: '100%', marginBottom: '15px' }} />
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '5px'
-              }}>
-                Cozen S. Breen
-              </h3>
-              <p style={{ fontSize: '14px', color: '#8B1538', fontWeight: 600 }}>ATTORNEY</p>
-            </div>
-
-            <div style={{ textAlign: 'center' }}>
-              <img src="/attorney-steven.jpg" alt="Steven Luis Ettema" style={{ width: '100%', marginBottom: '15px' }} />
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '5px'
-              }}>
-                Steven Luis Ettema
-              </h3>
-              <p style={{ fontSize: '14px', color: '#8B1538', fontWeight: 600 }}>ATTORNEY</p>
-            </div>
-
-            <div style={{ textAlign: 'center' }}>
-              <img src="/attorney-robert.jpg" alt="Robert Stec" style={{ width: '100%', marginBottom: '15px' }} />
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '5px'
-              }}>
-                Robert Stec
-              </h3>
-              <p style={{ fontSize: '14px', color: '#8B1538', fontWeight: 600 }}>ATTORNEY</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background: '#8B1538', padding: '50px 40px', textAlign: 'center' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{
-            fontFamily: "'Crimson Text', serif",
-            fontSize: '36px',
-            fontWeight: 700,
-            color: '#fff'
-          }}>
-            Justice is not just paid, justice begins today.
-          </h2>
-        </div>
-      </section>
-
-      <section style={{ background: '#2C2C2C', padding: '80px 40px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <h2 style={{
-              fontFamily: "'Crimson Text', serif",
-              fontSize: '42px',
-              fontWeight: 700,
-              color: '#fff',
-              marginBottom: '10px'
-            }}>
-              Contact The Office
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '60px', marginBottom: '50px' }}>
-            <div style={{ color: '#fff', textAlign: 'center' }}>
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '20px',
-                borderBottom: '2px solid #8B1538',
-                paddingBottom: '10px'
-              }}>
-                PITTSBURGH OFFICE
-              </h3>
-              <div style={{ fontSize: '14px', lineHeight: 2 }}>
-                <p>445 Fort Pitt Blvd</p>
-                <p>Suite 503</p>
-                <p>Pittsburgh, PA 15219</p>
-                <p style={{ marginTop: '15px' }}>
-                  <a href="tel:7244108346" style={{ color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
-                    (724) 410-8346
-                  </a>
-                </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ width: '100%', height: '280px', backgroundColor: '#e5e5e5', marginBottom: '20px', overflow: 'hidden' }}>
+                  <div style={{ width: '100%', height: '100%', backgroundColor: '#d4b896' }}></div>
+                </div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '20px', fontWeight: 700, color: '#2C2C2C', marginBottom: '5px', textTransform: 'uppercase' }}>
+                  Arthur LoMurro
+                </h3>
+                <p style={{ fontSize: '14px', color: '#8B0F28', margin: 0 }}>Managing Partner</p>
               </div>
-            </div>
 
-            <div style={{ color: '#fff', textAlign: 'center' }}>
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '20px',
-                borderBottom: '2px solid #8B1538',
-                paddingBottom: '10px'
-              }}>
-                INDIANA OFFICE
-              </h3>
-              <div style={{ fontSize: '14px', lineHeight: 2 }}>
-                <p>1098 Philadelphia Street</p>
-                <p>Indiana, PA 15701</p>
-                <p style={{ marginTop: '15px' }}>
-                  <a href="tel:7244108346" style={{ color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
-                    (724) 410-8346
-                  </a>
-                </p>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ width: '100%', height: '280px', backgroundColor: '#e5e5e5', marginBottom: '20px', overflow: 'hidden' }}>
+                  <div style={{ width: '100%', height: '100%', backgroundColor: '#c9b8a8' }}></div>
+                </div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '20px', fontWeight: 700, color: '#2C2C2C', marginBottom: '5px', textTransform: 'uppercase' }}>
+                  Jason D. Brown
+                </h3>
+                <p style={{ fontSize: '14px', color: '#8B0F28', margin: 0 }}>Partner</p>
               </div>
-            </div>
 
-            <div style={{ color: '#fff', textAlign: 'center' }}>
-              <h3 style={{
-                fontFamily: "'Crimson Text', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                marginBottom: '20px',
-                borderBottom: '2px solid #8B1538',
-                paddingBottom: '10px'
-              }}>
-                GREENSBURG OFFICE
-              </h3>
-              <div style={{ fontSize: '14px', lineHeight: 2 }}>
-                <p>100 North Maple Avenue</p>
-                <p>Greensburg, PA 15601</p>
-                <p style={{ marginTop: '15px' }}>
-                  <a href="tel:7244108346" style={{ color: '#fff', textDecoration: 'none', fontWeight: 600 }}>
-                    (724) 410-8346
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <h3 style={{
-              fontFamily: "'Crimson Text', serif",
-              fontSize: '28px',
-              fontWeight: 700,
-              color: '#fff',
-              marginBottom: '20px'
-            }}>
-              FOLLOW US
-            </h3>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-              <a href="#" style={{ color: '#fff', fontSize: '20px' }}>f</a>
-              <a href="#" style={{ color: '#fff', fontSize: '20px' }}>in</a>
-              <a href="#" style
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ width: '100%', height: '280px', backgroundColor: '#e
