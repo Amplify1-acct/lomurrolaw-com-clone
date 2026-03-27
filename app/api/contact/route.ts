@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   if (!resendKey) return NextResponse.json({ error: 'Email not configured' }, { status: 500 })
   const r = await fetch('https://api.resend.com/emails', {
     method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${resendKey}` },
-    body: JSON.stringify({ from: 'noreply@resend.dev', to: 'matt@amplifyforlawyers.com',
+    body: JSON.stringify({ from: 'noreply@resend.dev', to: 'contact@example.com',
       subject: `New Contact — ${name}`,
       html: `<p><b>Name:</b> ${name}</p><p><b>Phone:</b> ${phone}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b> ${message}</p>` })
   })
