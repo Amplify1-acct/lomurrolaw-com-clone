@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Open_Sans } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-open-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Lomurro Law",
-  description: "Personal Injury and Legal Services",
+  title: "LoMurro Law",
+  description: "Professional legal services",
 };
 
 export default function RootLayout({
@@ -11,133 +26,107 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body style={{ margin: 0, fontFamily: "'Open Sans', sans-serif", color: "#2c2c2c" }}>
-        <header style={{ position: "sticky", top: 0, zIndex: 1000, backgroundColor: "#fff", boxShadow: "0 2px 5px rgba(0,0,0,0.1)" }}>
-          <div style={{ backgroundColor: "#f8f8f8", borderBottom: "1px solid #e0e0e0" }}>
-            <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "8px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "13px" }}>
-              <div style={{ color: "#2c2c2c" }}>
-                We accept all calls 24/7 • <span style={{ color: "#8B1538", fontWeight: 600 }}>(724) 914-8645</span>
-              </div>
-              <div style={{ display: "flex", gap: "15px" }}>
-                <a href="/client-portal" style={{ color: "#2c2c2c", textDecoration: "none" }}>CLIENT PORTAL</a>
-                <a href="/pay-online" style={{ color: "#2c2c2c", textDecoration: "none" }}>PAY ONLINE</a>
-              </div>
+    <html lang="en" className={`${playfairDisplay.variable} ${openSans.variable}`}>
+      <body style={{ margin: 0, padding: 0, fontFamily: "var(--font-open-sans), system-ui, -apple-system, sans-serif", backgroundColor: "#ffffff", color: "#1a1a1a" }}>
+        <nav style={{ position: "sticky", top: 0, backgroundColor: "#1a1a1a", color: "#ffffff", zIndex: 1000, boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px 40px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ fontSize: "28px", fontWeight: "700", fontFamily: "var(--font-playfair), serif", color: "#d4af37" }}>
+              LoMurro Law
+            </div>
+            <div style={{ display: "flex", gap: "40px", alignItems: "center" }}>
+              <a href="#home" style={{ color: "#ffffff", textDecoration: "none", fontSize: "16px", fontWeight: "400", transition: "color 0.3s" }}>Home</a>
+              <a href="#about" style={{ color: "#ffffff", textDecoration: "none", fontSize: "16px", fontWeight: "400", transition: "color 0.3s" }}>About</a>
+              <a href="#services" style={{ color: "#ffffff", textDecoration: "none", fontSize: "16px", fontWeight: "400", transition: "color 0.3s" }}>Services</a>
+              <a href="#contact" style={{ color: "#ffffff", textDecoration: "none", fontSize: "16px", fontWeight: "400", transition: "color 0.3s" }}>Contact</a>
+              <a href="#contact" style={{ backgroundColor: "#d4af37", color: "#1a1a1a", padding: "12px 28px", textDecoration: "none", fontWeight: "600", fontSize: "16px", borderRadius: "4px", transition: "background-color 0.3s" }}>
+                Get Consultation
+              </a>
             </div>
           </div>
-          <nav style={{ maxWidth: "1200px", margin: "0 auto", padding: "20px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <img src="/logo.png" alt="Lomurro Law" style={{ height: "60px" }} />
-            </div>
-            <ul style={{ display: "flex", listStyle: "none", margin: 0, padding: 0, gap: "35px" }}>
-              <li>
-                <a href="/" style={{ color: "#2c2c2c", textDecoration: "none", fontFamily: "'Oswald', sans-serif", fontSize: "14px", fontWeight: 400, letterSpacing: "1px", textTransform: "uppercase" }}>HOME</a>
-              </li>
-              <li>
-                <a href="/about" style={{ color: "#2c2c2c", textDecoration: "none", fontFamily: "'Oswald', sans-serif", fontSize: "14px", fontWeight: 400, letterSpacing: "1px", textTransform: "uppercase" }}>ABOUT</a>
-              </li>
-              <li>
-                <a href="/practice-areas" style={{ color: "#2c2c2c", textDecoration: "none", fontFamily: "'Oswald', sans-serif", fontSize: "14px", fontWeight: 400, letterSpacing: "1px", textTransform: "uppercase" }}>PRACTICE AREAS</a>
-              </li>
-              <li>
-                <a href="/case-results" style={{ color: "#2c2c2c", textDecoration: "none", fontFamily: "'Oswald', sans-serif", fontSize: "14px", fontWeight: 400, letterSpacing: "1px", textTransform: "uppercase" }}>CASE RESULTS</a>
-              </li>
-              <li>
-                <a href="/contact" style={{ color: "#2c2c2c", textDecoration: "none", fontFamily: "'Oswald', sans-serif", fontSize: "14px", fontWeight: 400, letterSpacing: "1px", textTransform: "uppercase" }}>CONTACT</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        </nav>
 
         <main>{children}</main>
 
-        <footer style={{ backgroundColor: "#2c2c2c", color: "#fff" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "60px 20px 40px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", marginBottom: "40px" }}>
+        <footer style={{ backgroundColor: "#1a1a1a", color: "#ffffff", padding: "60px 40px 30px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "40px", marginBottom: "50px" }}>
               <div>
-                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: "16px", fontWeight: 700, marginTop: 0, marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>PRACTICE AREAS</h3>
+                <h3 style={{ fontFamily: "var(--font-playfair), serif", fontSize: "24px", marginBottom: "20px", color: "#d4af37", fontWeight: "600" }}>
+                  LoMurro Law
+                </h3>
+                <p style={{ fontSize: "14px", lineHeight: "1.8", color: "#cccccc", margin: 0 }}>
+                  Providing exceptional legal services with integrity, dedication, and expertise.
+                </p>
+              </div>
+
+              <div>
+                <h4 style={{ fontSize: "18px", marginBottom: "20px", fontWeight: "600", color: "#ffffff" }}>Practice Areas</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/serious-injury" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>SERIOUS INJURY</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Personal Injury</a>
                   </li>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/workers-compensation" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>WORKERS COMPENSATION</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Family Law</a>
                   </li>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/employment-law" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>EMPLOYMENT LAW</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Criminal Defense</a>
                   </li>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/traffic-offenses" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>TRAFFIC OFFENSES</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Estate Planning</a>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: "16px", fontWeight: 700, marginTop: 0, marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>MORE AREAS</h3>
+                <h4 style={{ fontSize: "18px", marginBottom: "20px", fontWeight: "600", color: "#ffffff" }}>Quick Links</h4>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/family-law" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>FAMILY LAW</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>About Us</a>
                   </li>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/wills-estates" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>WILLS & ESTATES</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Our Team</a>
                   </li>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/real-estate" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>REAL ESTATE</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Testimonials</a>
                   </li>
                   <li style={{ marginBottom: "12px" }}>
-                    <a href="/general-law" style={{ color: "#fff", textDecoration: "none", fontSize: "14px" }}>GENERAL LAW</a>
+                    <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Blog</a>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: "16px", fontWeight: 700, marginTop: 0, marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>CONTACT INFO</h3>
-                <p style={{ fontSize: "14px", lineHeight: "1.8", margin: 0 }}>
-                  <strong>PHONE:</strong><br />
-                  (724) 914-8645<br /><br />
-                  <strong>ADDRESS:</strong><br />
-                  3 W. Main St.<br />
-                  Uniontown, PA 15401<br /><br />
-                  <strong>EMAIL:</strong><br />
-                  info@lomurrolaw.com
-                </p>
-              </div>
-
-              <div>
-                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: "16px", fontWeight: 700, marginTop: 0, marginBottom: "20px", letterSpacing: "1px", textTransform: "uppercase" }}>OFFICE HOURS</h3>
-                <p style={{ fontSize: "14px", lineHeight: "1.8", margin: 0 }}>
-                  <strong>MONDAY - FRIDAY:</strong><br />
-                  9:00 AM - 5:00 PM<br /><br />
-                  <strong>SATURDAY:</strong><br />
-                  By Appointment<br /><br />
-                  <strong>SUNDAY:</strong><br />
-                  Closed
-                </p>
+                <h4 style={{ fontSize: "18px", marginBottom: "20px", fontWeight: "600", color: "#ffffff" }}>Contact Info</h4>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                  <li style={{ marginBottom: "12px", fontSize: "14px", color: "#cccccc", lineHeight: "1.6" }}>
+                    Phone: (555) 123-4567
+                  </li>
+                  <li style={{ marginBottom: "12px", fontSize: "14px", color: "#cccccc", lineHeight: "1.6" }}>
+                    Email: info@lomurrolaw.com
+                  </li>
+                  <li style={{ marginBottom: "12px", fontSize: "14px", color: "#cccccc", lineHeight: "1.6" }}>
+                    Office Hours:<br />Mon-Fri: 9AM - 5PM
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div style={{ borderTop: "1px solid #444", paddingTop: "30px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ display: "flex", gap: "15px" }}>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ width: "35px", height: "35px", borderRadius: "50%", backgroundColor: "#8B1538", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", textDecoration: "none" }}>f</a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={{ width: "35px", height: "35px", borderRadius: "50%", backgroundColor: "#8B1538", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", textDecoration: "none" }}>t</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ width: "35px", height: "35px", borderRadius: "50%", backgroundColor: "#8B1538", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", textDecoration: "none" }}>in</a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" style={{ width: "35px", height: "35px", borderRadius: "50%", backgroundColor: "#8B1538", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", textDecoration: "none" }}>yt</a>
-              </div>
-              <p style={{ fontSize: "13px", margin: 0, color: "#999" }}>
-                © {new Date().getFullYear()} Lomurro Law. All rights reserved.
+            <div style={{ borderTop: "1px solid #333333", paddingTop: "30px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <p style={{ fontSize: "14px", color: "#cccccc", margin: 0 }}>
+                © 2024 LoMurro Law. All rights reserved.
               </p>
+              <div style={{ display: "flex", gap: "20px" }}>
+                <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Privacy Policy</a>
+                <a href="#" style={{ color: "#cccccc", textDecoration: "none", fontSize: "14px", transition: "color 0.3s" }}>Terms of Service</a>
+              </div>
             </div>
           </div>
         </footer>
 
-        <a href="tel:7249148645" style={{ position: "fixed", bottom: "30px", right: "30px", backgroundColor: "#8B1538", color: "#fff", padding: "15px 25px", borderRadius: "50px", textDecoration: "none", fontFamily: "'Oswald', sans-serif", fontSize: "16px", fontWeight: 700, letterSpacing: "1px", boxShadow: "0 4px 15px rgba(139, 21, 56, 0.4)", zIndex: 999 }}>
-          CALL NOW
+        <a href="tel:5551234567" style={{ position: "fixed", bottom: "30px", right: "30px", backgroundColor: "#d4af37", color: "#1a1a1a", width: "60px", height: "60px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", boxShadow: "0 4px 12px rgba(212,175,55,0.4)", zIndex: 999, transition: "transform 0.3s" }}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92V19.92C22 20.48 21.54 20.93 20.99 20.92C10.46 20.41 3.59 13.54 3.08 3.01C3.07 2.46 3.52 2 4.08 2H7.08C7.64 2 8.1 2.46 8.1 3.02C8.1 4.17 8.27 5.28 8.58 6.33C8.7 6.74 8.59 7.19 8.29 7.49L6.59 9.19C8.13 12.28 11.72 15.87 14.81 17.41L16.51 15.71C16.81 15.41 17.26 15.3 17.67 15.42C18.72 15.73 19.83 15.9 20.98 15.9C21.54 15.9 22 16.36 22 16.92Z" fill="#1a1a1a"/>
+          </svg>
         </a>
       </body>
     </html>
